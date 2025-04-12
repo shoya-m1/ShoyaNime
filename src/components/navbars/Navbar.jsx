@@ -8,6 +8,7 @@ const Navbar = () => {
   const [menuKlik, setMenuKlik] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
+  const [selectDataAnime, setSelectDataAnime] = useState(false);
 
   return (
     <header className="fixed top-0 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-40 w-full text-sm">
@@ -23,6 +24,7 @@ const Navbar = () => {
                     setMenuKlik(!menuKlik);
                     setIsChecked(!isChecked);
                     setShowSearch(false);
+                    setSelectDataAnime(false);
                   }}
                 />
                 <svg viewBox="0 0 32 32">
@@ -33,17 +35,38 @@ const Navbar = () => {
             </button>
           </div>
           <div className="flex items-center">
-            <a className="lg:ms-6 brand flex-none rounded-md text-lg lg:text-xl inline-block font-semibold " href="../templates/personal/index.html" aria-label="Preline">
+            <div
+              onClick={() => {
+                setSelectDataAnime(!selectDataAnime);
+                setMenuKlik(false);
+                setIsChecked(false);
+                setShowSearch(false);
+              }}
+              className="lg:ms-6 cursor-pointer brand flex-none rounded-md text-lg lg:text-xl inline-block font-semibold "
+            >
               <span className="text-yellow-300">Shoya</span>
               Nime
-            </a>
+            </div>
             <div className="ms-1 sm:ms-2"></div>
+            <div
+              className={`${
+                selectDataAnime ? "h-20 border" : "h-0"
+              } duration-300 ese-in-out overflow-hidden font-semibold absolute bg-neutral-900  border-neutral-700 rounded-lg top-15 flex flex-col items-center justify-center md:w-32 w-full right-0 left-0 md:left-3`}
+            >
+              <a href="https://shoyanime.vercel.app/" className="text-yellow-300 border-b-1 border-neutral-700 w-full text-center py-1">
+                Otakudesu
+              </a>
+              <a href="https://shonime.vercel.app/" className="py-1">
+                Samehadaku
+              </a>
+            </div>
           </div>
           <FiSearch
             onClick={() => {
               setMenuKlik(false);
               setIsChecked(false);
               setShowSearch(!showSearch);
+              setSelectDataAnime(false);
             }}
             className="md:hidden block text-2xl text-gray-500"
           />

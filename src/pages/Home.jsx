@@ -17,7 +17,7 @@ const resJumbotron = {
 };
 
 const resMovie = {
-  desktop: { breakpoint: { max: 4000, min: 1179 }, items: 6, partialVisibilityGutter: -10 },
+  desktop: { breakpoint: { max: 4000, min: 1179 }, items: 6, partialVisibilityGutter: -20 },
   tablet: { breakpoint: { max: 1179, min: 895 }, items: 5, partialVisibilityGutter: -40 },
   mobile: { breakpoint: { max: 895, min: 575 }, items: 4, partialVisibilityGutter: -40 },
   hpsm: { breakpoint: { max: 575, min: 447 }, items: 3, partialVisibilityGutter: -30 },

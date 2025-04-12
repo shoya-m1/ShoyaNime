@@ -80,11 +80,10 @@ export const AnimeStreaming = () => {
                           <p
                             className={`${
                               resolution == list.serverId ? "bg-yellow-500" : "bg-neutral-700"
-                            } sm:text-base text-sm h-8 px-5 cursor-pointer duration-300 ease-in-out hover:bg-yellow-400 flex items-center justify-center line-clamp-1 text-elipsis`}
+                            } sm:text-base text-sm h-8 px-5 cursor-pointer duration-300 ease-in-out hover:bg-yellow-400 flex gap-1 items-center justify-center line-clamp-1 text-elipsis`}
                           >
-                            {list.title}
-                            <span> </span>
-                            {resolusi.title}
+                            <span>{list.title}</span>
+                            <span>{resolusi.title}</span>
                           </p>
                         </li>
                       ));
